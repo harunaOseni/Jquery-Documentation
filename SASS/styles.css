@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8,15 +13,19 @@ body {
 }
 
 nav {
-  max-width: 200px;
-  height: 100vh;
-  max-width: 300px;
   background-color: #eee;
   border-right: 2px solid #777;
 }
 
 nav header {
   padding: 15px;
+  background-color: white;
+  text-align: center;
+}
+
+nav #navLinks {
+  max-width: 590px;
+  height: 100vh;
 }
 
 nav a {
@@ -29,7 +38,7 @@ nav a {
 
 main {
   background-color: white;
-  height: 100vh;
+  height: 120vh;
   overflow-y: scroll;
 }
 
@@ -47,9 +56,71 @@ main li {
   line-height: 1.5;
 }
 
+main h2 {
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 26px;
+}
+
+main code {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.062);
+  color: crimson;
+  text-align: left;
+  position: relative;
+  word-wrap: break-word;
+  line-height: 2;
+  padding: 13px;
+  margin: 11px;
+  margin-left: 23px;
+  border-radius: 7px;
+}
+
+main span.codes {
+  font-family: Consolas, "courier new";
+  color: crimson;
+  background-color: rgba(0, 0, 0, 0.062);
+  padding: 2px;
+}
+
 header {
   font-size: 23px;
   padding: 20px 0 0 25px;
   font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav {
+    background-color: #eee;
+    border-right: 2px solid #777;
+    border-top: 2px solid rgba(14, 2, 2, 0.096);
+  }
+  nav #navLinks {
+    max-width: 590px;
+    max-height: 243px;
+    height: 300px !important;
+    overflow-y: scroll;
+  }
+  nav header {
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+  }
+  nav a {
+    border-top: 1px solid #777;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.767);
+  }
+  main {
+    overflow-y: initial;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

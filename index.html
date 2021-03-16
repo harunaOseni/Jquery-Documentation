@@ -5,18 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- link to scss (css on steriods) -->
-    <link rel="stylesheet" href="SASS/styles.css"/>
+    <link rel="stylesheet" href="SASS/styles.css" />
 
-    <title>JQUERY Documentation</title> 
+    <title>JQUERY Documentation</title>
   </head>
   <body>
-    <nav id="navbar">
+    <nav>
       <header>JQUERY Documentation</header>
-      <a href="#Overview" class="nav-link">Overview</a>
-      <a href="#History" class="nav-link">History</a>
-      <a href="#Features" class="nav-link">Features</a>
-      <a href="#Distribution" class="nav-link">Distribution</a>
-      <a href="#Interface" class="nav-link">Interface</a>
+      <div id="navLinks">
+        <a href="#Overview" class="nav-link">Overview</a>
+        <a href="#History" class="nav-link">History</a>
+        <a href="#Features" class="nav-link">Features</a>
+        <a href="#Distribution" class="nav-link">Distribution</a>
+        <a href="#Interface" class="nav-link">Interface</a>
+      </div>
     </nav>
 
     <main id="main-doc">
@@ -76,18 +78,167 @@
 
       <section class="main-section" id="History">
         <header>History</header>
+
+        <p>
+          jQuery was originally created in January 2006 at BarCamp NYC by John
+          Resig, influenced by Dean Edwards' earlier cssQuery library. It is
+          currently maintained by a team of developers led by Timmy Willison
+          (with the jQuery selector engine, Sizzle, being led by Richard
+          Gibson).
+        </p>
+
+        <p>
+          jQuery was originally licensed under the CC BY-SA 2.5, and relicensed
+          to the MIT license in 2006. At the end of 2006, it was dual-licensed
+          under GPL and MIT licenses. As this led to some confusion, in 2012 the
+          GPL was dropped and is now only licensed under the MIT license.
+        </p>
+
+        <h2>Popularity</h2>
+
+        <ul>
+          <li>
+            In 2015, jQuery was used on 62.7% of the top 1 million websites
+            (according to BuiltWith), and 17% of all Internet websites.
+          </li>
+
+          <li>
+            In 2017, jQuery was used on 69.2% of the top 1 million websites
+            (according to Libscore).
+          </li>
+
+          <li>
+            In 2018, jQuery was used on 78% of the top 1 million websites.
+          </li>
+
+          <li>
+            In 2019, jQuery was used on 80% of the top 1 million websites
+            (according to BuiltWith), and 74.1% of the top 10 million (per
+            W3Techs).
+          </li>
+
+          <li>
+            As of Feb 2020, jQuery is used by 74.4% of the top 10 million
+            websites (according to W3Techs).
+          </li>
+        </ul>
       </section>
 
       <section class="main-section" id="Features">
         <header>Features</header>
+
+        <p>jQuery includes the following features:</p>
+
+        <ul>
+          <li>
+            DOM element selections using the multi-browser open source selector
+            engine Sizzle, a spin-off of the jQuery project
+          </li>
+
+          <li>
+            DOM manipulation based on CSS selectors that uses elements' names
+            and attributes, such as id and class, as criteria to select nodes in
+            the DOM
+          </li>
+
+          <li>Events</li>
+
+          <li>Effects and animations</li>
+
+          <li>Ajax</li>
+
+          <li>
+            Deferred and Promise objects to control asynchronous processing
+          </li>
+
+          <li>JSON parsing</li>
+
+          <li>Extensibility through plug-ins</li>
+
+          <li>Utilities, such as feature detection</li>
+
+          <li>
+            Compatibility methods that are natively available in modern
+            browsers, but need fallbacks for older browsers, such as
+            <span class="codes">jQuery.inArray()</span> and
+            <span class="codes">jQuery.each()</span>
+          </li>
+
+          <li>Cross-browser support</li>
+        </ul>
       </section>
 
       <section class="main-section" id="Distribution">
         <header>Distribution</header>
+
+        <p>
+          The jQuery library is typically distributed as a single JavaScript
+          file that defines all its interfaces, including DOM, Events, and Ajax
+          functions. It can be included within a Web page by linking to a local
+          copy, or by linking to one of the many copies available from public
+          servers. jQuery has a content delivery network (CDN) hosted by
+          MaxCDN.Google in Google Hosted Libraries service and Microsoft host
+          the library as well.
+        </p>
+
+        <p>
+          Example of linking a copy of the library locally (from the same server
+          that hosts the Web page):
+        </p>
+        <code> &lt;script src="jquery-3.5.1.min.js"&gt;&lt;/script&gt; </code>
+
+        <p>
+          Example of linking a copy of the library from jQuery's public CDN:
+        </p>
+
+        <code>
+          &lt;src="https://code.jquery.com/jquery-3.5.1.min.js"
+          integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+          crossorigin="anonymous"&gt;&lt;/script&gt;
+        </code>
       </section>
 
       <section class="main-section" id="Interface">
         <header>Interface</header>
+
+        <h2>Functions</h2>
+
+        <p>
+          jQuery provides two kinds of functions, static utility functions and
+          jQuery object methods. Each has its own usage style. Both are accessed
+          through jQuery's main identifier: <span class="codes">jQuery</span>.
+          This identifier has an alias named <span class="codes">$</span>. All
+          functions can be accessed through either of these two names.
+        </p>
+
+        <h2>Typical start-point</h2>
+
+        <p>
+          Typically, jQuery is used by putting initialization code and event
+          handling functions in <span class="codes">$(handler)</span>. This is
+          triggered by jQuery when the browser has finished constructing the DOM
+          for the current Web page.
+        </p>
+
+        <code>
+          $(function () { // This anonymous function is called when the page has
+          completed loading. // Here, one can place code to create jQuery
+          objects, handle events, etc. });
+        </code>
+
+        <p>or</p>
+        <code>
+          $(fn); // The function named fn, defined elsewhere, is called when the
+          page has loaded.
+        </code>
+
+        <p>
+          Historically,
+          <span class="codes">$(document).ready(callback)</span> has been the de
+          facto idiom for running code after the DOM is ready. However, since
+          jQuery 3.0, developers are encouraged to use the much shorter
+          <span class="codes">$(handler)</span> signature instead.
+        </p>
       </section>
     </main>
   </body>

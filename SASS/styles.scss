@@ -5,8 +5,13 @@
 $flex: flex;
 $nav-height: 100vh;
 $nav-maxWidth: 200px;
+$script: script;
 
 // SCSS codes for technical documentation project
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: $flex;
   font-family: "Montserrat", sans-serif;
@@ -15,14 +20,18 @@ body {
 
 // nav element css below
 nav {
-  max-width: $nav-maxWidth;
-  height: $nav-height;
-  max-width: 300px;
   background-color: #eee;
   border-right: 2px solid #777;
 
-  header{
-      padding: 15px;
+  header {
+    padding: 15px;
+    background-color: white;
+    text-align: center;
+  }
+
+  #navLinks {
+    max-width: 590px;
+    height: $nav-height;
   }
 
   a {
@@ -33,13 +42,12 @@ nav {
     color: rgba(0, 0, 0, 0.767);
   }
 }
-
 //nav element css above
 
 //main element css below
 main {
   background-color: white;
-  height: 100vh;
+  height: 120vh;
   overflow-y: scroll;
   p {
     margin-left: 28px;
@@ -47,15 +55,41 @@ main {
   }
 
   ul {
-      margin-left: 35px;
+    margin-left: 35px;
   }
-  
+
   li {
-      padding-bottom: 10px;
-      line-height: 1.5;
+    padding-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 26px;
+  }
+
+  code {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.062);
+    color: crimson;
+    text-align: left;
+    position: relative;
+    word-wrap: break-word;
+    line-height: 2;
+    padding: 13px;
+    margin: 11px;
+    margin-left: 23px;
+    border-radius: 7px;
+  }
+
+  span.codes {
+    font-family: Consolas, "courier new";
+    color: crimson;
+    background-color: rgba(0, 0, 0, 0.062);
+    padding: 2px;
   }
 }
-
 //main element css above
 
 //header element css below
@@ -65,3 +99,41 @@ header {
   font-weight: 500;
 }
 //header element css above
+
+//media query css for smaller viewport
+@media only screen and (max-width: 600px){
+  body {
+    flex-direction: column;
+  }
+
+  nav {
+    background-color: #eee;
+    border-right: 2px solid #777; 
+    border-top: 2px solid rgba(14, 2, 2, 0.096);
+
+    #navLinks {
+      max-width: 590px;
+      max-height: 243px;
+      height: 300px!important;
+      overflow-y: scroll;
+    }
+
+    header {
+      padding: 15px;
+      text-align: center;
+      background-color: white;
+    }
+
+    a {
+      border-top: 1px solid #777;
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.767);
+    } 
+  }
+
+  main {
+    overflow-y: initial;
+  }
+}
