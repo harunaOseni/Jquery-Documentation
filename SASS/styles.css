@@ -98,12 +98,13 @@ header {
   }
   nav {
     background-color: #eee;
-    border-right: 2px solid #777;
-    border-top: 2px solid rgba(14, 2, 2, 0.096);
+    border-right: initial;
+    border-top: 2px solid rgba(14, 2, 2, 0.336);
+    border-bottom: 2px solid rgba(14, 2, 2, 0.336);
   }
   nav #navLinks {
     max-width: 590px;
-    max-height: 243px;
+    max-height: 240px;
     height: 300px !important;
     overflow-y: scroll;
   }
