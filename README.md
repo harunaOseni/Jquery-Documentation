@@ -4,7 +4,4 @@ Here is a brief preview on the HTML and SASS codes that was written to build thi
 
 
 #preview of Project in the browser.
-
-
-
-# Code Written In Visual Studio Code 
+https://harunaoseni.github.io/Jquery-Documentation/
